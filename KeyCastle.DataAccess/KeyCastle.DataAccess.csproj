@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KeyCastle.DapperPort\KeyCastle.DapperPort.csproj" />
+    <ProjectReference Include="..\KeyCastle.Domain\KeyCastle.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ModelBuilders\" />
+  </ItemGroup>
+
+</Project>
