@@ -1,6 +1,4 @@
-﻿using KeyCastle.DapperPort.Abstraction;
-
-namespace KeyCastle.DataAccess.DataRequestObjects.PlayerRequests
+﻿namespace KeyCastle.DataAccess.DataRequestObjects.PlayerRequests
 {
     internal class IsUsernameTaken : IDapperRequest<bool>
     {

@@ -6,9 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\KeyCastle.DapperPort\KeyCastle.DapperPort.csproj" />
-    <ProjectReference Include="..\KeyCastle.Domain\KeyCastle.Domain.csproj" />
-  </ItemGroup>
-
 </Project>

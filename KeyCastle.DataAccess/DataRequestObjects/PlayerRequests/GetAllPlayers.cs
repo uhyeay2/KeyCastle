@@ -1,7 +1,4 @@
-﻿using KeyCastle.DataAccess.Abstraction.BaseDapperRequests;
-using KeyCastle.DataAccess.DataTransferObjects;
-
-namespace KeyCastle.DataAccess.DataRequestObjects.PlayerRequests
+﻿namespace KeyCastle.DataAccess.DataRequestObjects.PlayerRequests
 {
     internal class GetAllPlayers : ParameterlessRequest<PlayerDTO>
     {

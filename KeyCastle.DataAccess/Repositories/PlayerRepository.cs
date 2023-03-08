@@ -1,8 +1,6 @@
-﻿using KeyCastle.DapperPort.Abstraction;
-using KeyCastle.DataAccess.Abstraction.ModelBuilding;
+﻿using KeyCastle.DataAccess.Abstraction.ModelBuilding;
 using KeyCastle.DataAccess.Abstraction.Repositories;
 using KeyCastle.DataAccess.DataRequestObjects.PlayerRequests;
-using KeyCastle.DataAccess.DataTransferObjects;
 using KeyCastle.Domain.Models;
 using KeyCastle.Domain.Repositories;
 
@@ -27,14 +25,14 @@ namespace KeyCastle.DataAccess.Repositories
 
         public async Task<Player> GetPlayerAsync(Guid guid) => _modelBuilder.Build(await _sqlHandler.FetchAsync(new GetPlayer(guid)));
 
-        public async Task<int> InsertPlayerAsync(string username)
+        public async Task<int> InsertPlayerAsync(Guid guid, string username)
         {
             if(await IsUserNameTakenAsync(username))
             {
                 return -1;
             }
 
-            return await _sqlHandler.ExecuteAsync(new InsertPlayer(Guid.NewGuid(), username));
+            return await _sqlHandler.ExecuteAsync(new InsertPlayer(guid, username));
         }
 
         public async Task<bool> IsUserNameTakenAsync(string username) => await _sqlHandler.FetchAsync(new IsUsernameTaken(username));

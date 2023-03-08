@@ -22,12 +22,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DataRequestTests\" />
     <Folder Include="RepositoryTests\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\KeyCastle.DapperPort\KeyCastle.DapperPort.csproj" />
+    <ProjectReference Include="..\KeyCastle.DataAccess\KeyCastle.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>

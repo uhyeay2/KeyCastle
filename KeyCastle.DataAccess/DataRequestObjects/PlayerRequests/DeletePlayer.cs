@@ -1,6 +1,4 @@
-﻿using KeyCastle.DataAccess.Abstraction.BaseDapperRequests;
-
-namespace KeyCastle.DataAccess.DataRequestObjects.PlayerRequests
+﻿namespace KeyCastle.DataAccess.DataRequestObjects.PlayerRequests
 {
     internal class DeletePlayer : GuidRequest
     {

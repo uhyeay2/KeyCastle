@@ -5,6 +5,8 @@ namespace KeyCastle.DataAccess.Tests.TestHelpers
 {
     public abstract class InlineSqlTest
     {
-        protected IHandleInlineSql _sqlHandler = ServiceInjection.NewSqlHandler(Hidden.TestDbConnectionString);
+        protected IHandleInlineSql SqlHandler = ServiceInjection.NewSqlHandler(Hidden.TestDbConnectionString);
+
+        protected Guid TestGuid = Guid.NewGuid();
     }
 }

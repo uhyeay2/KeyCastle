@@ -4,7 +4,7 @@ namespace KeyCastle.Domain.Repositories
 {
     public interface IPlayerRepository
     {
-        public Task<int> InsertPlayerAsync(string username);
+        public Task<int> InsertPlayerAsync(Guid guid, string username);
 
         public Task<IEnumerable<Player>> GetAllPlayersAsync();
 

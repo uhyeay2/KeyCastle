@@ -1,7 +1,4 @@
-﻿using KeyCastle.DapperPort.Abstraction;
-using KeyCastle.DataAccess.DataTransferObjects;
-
-namespace KeyCastle.DataAccess.DataRequestObjects.PlayerRequests
+﻿namespace KeyCastle.DataAccess.DataRequestObjects.PlayerRequests
 {
     internal class GetPlayer : IDapperRequest<PlayerDTO>
     {
