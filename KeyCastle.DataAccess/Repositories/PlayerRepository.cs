@@ -14,26 +14,13 @@ namespace KeyCastle.DataAccess.Repositories
 
         public async Task<int> DeletePlayerAsync(Guid guid) => await _sqlHandler.ExecuteAsync(new DeletePlayer(guid));
 
-        public async Task<IEnumerable<Player>> GetAllPlayersAsync()
-        {
-            var players = await _sqlHandler.FetchListAsync(new GetAllPlayers());
-
-            return players.Any() ? players.Select(_modelBuilder.Build) : Enumerable.Empty<Player>();
-        }
+        public async Task<IEnumerable<Player>> GetAllPlayersAsync() => (await _sqlHandler.FetchListAsync(new GetAllPlayers())).Select(_modelBuilder.Build);
 
         public async Task<Player> GetPlayerAsync(string username) => _modelBuilder.Build(await _sqlHandler.FetchAsync(new GetPlayer(username)));
 
         public async Task<Player> GetPlayerAsync(Guid guid) => _modelBuilder.Build(await _sqlHandler.FetchAsync(new GetPlayer(guid)));
 
-        public async Task<int> InsertPlayerAsync(Guid guid, string username)
-        {
-            if(await IsUserNameTakenAsync(username))
-            {
-                return -1;
-            }
-
-            return await _sqlHandler.ExecuteAsync(new InsertPlayer(guid, username));
-        }
+        public async Task<int> InsertPlayerAsync(Guid guid, string username) => await _sqlHandler.ExecuteAsync(new InsertPlayer(guid, username));
 
         public async Task<bool> IsUserNameTakenAsync(string username) => await _sqlHandler.FetchAsync(new IsUsernameTaken(username));
     }
